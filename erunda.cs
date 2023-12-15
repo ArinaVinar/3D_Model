@@ -8,8 +8,6 @@ public class Model : MonoBehaviour
 {
     public Dropdown dropdown1 = GameObject.Find("Point_A").GetComponent<Dropdown>();
     public Dropdown dropdown2 = GameObject.Find("Point_B").GetComponent<Dropdown>();
-    //public GameObject eee = GameObject.Find("1601");
-    //public DropdownField
 
     private List<GameObject> auditoriums = new List<GameObject>();
     private GameObject object1601;
@@ -24,7 +22,6 @@ public class Model : MonoBehaviour
 
     void Start()
     {
-        // Çàãðóçêà èãðîâûõ îáúåêòîâ èëè äðóãèõ íåîáõîäèìûõ êîìïîíåíòîâ
         object1601 = GameObject.Find("1601");
         object1602 = GameObject.Find("1602");
         object1604 = GameObject.Find("1604");
@@ -42,8 +39,6 @@ public class Model : MonoBehaviour
         auditoriums.Add(object1612);
         auditoriums.Add(object1614);
 
-
-        // Ïîäïèñûâàåìñÿ íà ñîáûòèå èçìåíåíèÿ âûáðàííûõ çíà÷åíèé â dropdown-ñïèñêàõ
         dropdown1.onValueChanged.AddListener(OnDropdown1ValueChanged);
         dropdown2.onValueChanged.AddListener(OnDropdown2ValueChanged);
     }
@@ -65,10 +60,8 @@ public class Model : MonoBehaviour
             && object1608 != null && object1610 != null
             && object1612 != null && object1614 != null)
         {
-            // Âû÷èñëåíèå äèñòàíöèè ìåæäó îáúåêòàìè
             float distance = Vector3.Distance(auditoriums[index].transform.position, object1601.transform.position);
 
-            // Âûâîä äèñòàíöèè â êîíñîëü
             Debug.Log("Distance: " + distance);
         }
     }
