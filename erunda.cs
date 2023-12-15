@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class erunda : MonoBehaviour
+public class Model : MonoBehaviour
 {
     public Dropdown dropdown1 = GameObject.Find("Point_A").GetComponent<Dropdown>();
     public Dropdown dropdown2 = GameObject.Find("Point_B").GetComponent<Dropdown>();
@@ -24,7 +24,7 @@ public class erunda : MonoBehaviour
 
     void Start()
     {
-        // Загрузка игровых объектов или других необходимых компонентов
+        // Г‡Г ГЈГ°ГіГ§ГЄГ  ГЁГЈГ°Г®ГўГ»Гµ Г®ГЎГєГҐГЄГІГ®Гў ГЁГ«ГЁ Г¤Г°ГіГЈГЁГµ Г­ГҐГ®ГЎГµГ®Г¤ГЁГ¬Г»Гµ ГЄГ®Г¬ГЇГ®Г­ГҐГ­ГІГ®Гў
         object1601 = GameObject.Find("1601");
         object1602 = GameObject.Find("1602");
         object1604 = GameObject.Find("1604");
@@ -43,7 +43,7 @@ public class erunda : MonoBehaviour
         auditoriums.Add(object1614);
 
 
-        // Подписываемся на событие изменения выбранных значений в dropdown-списках
+        // ГЏГ®Г¤ГЇГЁГ±Г»ГўГ ГҐГ¬Г±Гї Г­Г  Г±Г®ГЎГ»ГІГЁГҐ ГЁГ§Г¬ГҐГ­ГҐГ­ГЁГї ГўГ»ГЎГ°Г Г­Г­Г»Гµ Г§Г­Г Г·ГҐГ­ГЁГ© Гў dropdown-Г±ГЇГЁГ±ГЄГ Гµ
         dropdown1.onValueChanged.AddListener(OnDropdown1ValueChanged);
         dropdown2.onValueChanged.AddListener(OnDropdown2ValueChanged);
     }
@@ -65,10 +65,10 @@ public class erunda : MonoBehaviour
             && object1608 != null && object1610 != null
             && object1612 != null && object1614 != null)
         {
-            // Вычисление дистанции между объектами
+            // Г‚Г»Г·ГЁГ±Г«ГҐГ­ГЁГҐ Г¤ГЁГ±ГІГ Г­Г¶ГЁГЁ Г¬ГҐГ¦Г¤Гі Г®ГЎГєГҐГЄГІГ Г¬ГЁ
             float distance = Vector3.Distance(auditoriums[index].transform.position, object1601.transform.position);
 
-            // Вывод дистанции в консоль
+            // Г‚Г»ГўГ®Г¤ Г¤ГЁГ±ГІГ Г­Г¶ГЁГЁ Гў ГЄГ®Г­Г±Г®Г«Гј
             Debug.Log("Distance: " + distance);
         }
     }
